@@ -115,7 +115,7 @@ function game_over_notification(){
  function valid_pos(cord){
      var x = cord[0];
      var y = cord[1];
-     if(x > (ctx.canvas.width + snake_size/2) || x <= (0 - snake_size/2) || y > (ctx.canvas.height + snake_size/2) || y <= 0 - snake_size/2){
+     if(x > (ctx.canvas.width - snake_size) || x <= (0 - snake_size) || y > (ctx.canvas.height - snake_size) || y <= 0 - snake_size){
          return false;
      }
      return true;
