@@ -138,10 +138,10 @@ function game_over_notification(){
      }
  }
  function create_food(){
-     food_x = Math.floor((Math.random() * (ctx.canvas.width)) + 1);
+     food_x = Math.floor((Math.random() * (ctx.canvas.width - snake_size)) + 1);
      food_x = (Math.round(food_x / 30) * 30);
 
-     food_y = Math.floor((Math.random() * (ctx.canvas.height)) + 1);
+     food_y = Math.floor((Math.random() * (ctx.canvas.height - snake_size)) + 1);
      food_y = (Math.round(food_y / 30) * 30);
 
 
