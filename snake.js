@@ -13,7 +13,7 @@ var snake_length = 3;
 var snake_parts;
 
 // Movement var
-var snake_time_scale = 60; // default 60
+var snake_time_scale = 80; // default 80
 var game_loop;
 
 // Food vars
