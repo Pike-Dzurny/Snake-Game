@@ -19,6 +19,7 @@ var game_loop;
 // Food vars
 var food_x = 0;
 var food_y = 0;
+var score = 0;
 var create_new_food = true;
 
 // Sound vars
@@ -30,7 +31,7 @@ var up_pressed = false; // w = 87     up arrow = 38
 var left_pressed = false; // a = 65    left arrow = 37 +
 var down_pressed = false; // s = 83   down arrow = 40
 var right_pressed = false; // d = 68  right arrow = 39+
-var escape_pressed = true;// esc = 27
+var escape_pressed = true; // esc = 27
 
 document.addEventListener("keydown",keyDownHandler,false);
 
@@ -84,14 +85,14 @@ function keyDownHandler(e){
 
 function game_over_notification(){
      clearInterval(game_loop);
-     document.getElementById("game_over").style.visibility = "visible";
-     document.location.reload();
-
+     document.getElementById("score").innerHTML = "Score: " + String(score);
+     document.getElementById("game_over").style.display = "inline";
  }
 
  function snake_at_food() {
      if((snake_head[0] == food_x)&&(snake_head[1] == food_y)){
          snake_length += 4;
+	 score += 1;
          create_new_food = true;
          if(snake_time_scale >= 20){
              snake_time_scale -= 10;
