@@ -200,5 +200,19 @@ function game_over_notification(){
      }
 
  }
+ function restart(){
+    starting_x = 60;
+    starting_y = 60;
+    snake_head = [starting_x, starting_y, "#ffffff"];
+    snake_body = [];
+    snake_speed = 30;
+    snake_size = 20;
+    snake_length = 3;
+    escape_pressed = true;
+    right_pressed = true;
+    clearInterval(game_loop);
+    document.getElementById("game_over").style.display = "none";
+    game_loop = setInterval(draw, snake_time_scale);
+}
 
  game_loop = setInterval(draw, snake_time_scale);
