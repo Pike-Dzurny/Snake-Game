@@ -94,9 +94,6 @@ function game_over_notification(){
          snake_length += 4;
 	 score += 1;
          create_new_food = true;
-         if(snake_time_scale >= 20){
-             snake_time_scale -= 10;
-         }
      }
  }
 
