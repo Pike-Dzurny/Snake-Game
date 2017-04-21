@@ -138,9 +138,16 @@ function game_over_notification(){
  function create_food(){
      food_x = Math.floor((Math.random() * (ctx.canvas.width - snake_size)) + 1);
      food_x = (Math.round(food_x / 30) * 30);
-
      food_y = Math.floor((Math.random() * (ctx.canvas.height - snake_size)) + 1);
      food_y = (Math.round(food_y / 30) * 30);
+     if(snake_body.indexOf(food_x) == -1 || snake_body.indexOf(food_y) == -1){
+
+	food_x = Math.floor((Math.random() * (ctx.canvas.width - snake_size)) + 1);
+     	food_x = (Math.round(food_x / 30) * 30);
+
+     	food_y = Math.floor((Math.random() * (ctx.canvas.height - snake_size)) + 1);
+     	food_y = (Math.round(food_y / 30) * 30);
+       } 
 
 
  }
@@ -210,6 +217,11 @@ function game_over_notification(){
     clearInterval(game_loop);
     document.getElementById("game_over").style.display = "none";
     game_loop = setInterval(draw, snake_time_scale);
+    score = 0;
+    food_x = Math.floor((Math.random() * (ctx.canvas.width - snake_size)) + 1);
+    food_x = (Math.round(food_x / 30) * 30);
+    food_y = Math.floor((Math.random() * (ctx.canvas.height - snake_size)) + 1);
+    food_y = (Math.round(food_y / 30) * 30); 
 }
 
  game_loop = setInterval(draw, snake_time_scale);
